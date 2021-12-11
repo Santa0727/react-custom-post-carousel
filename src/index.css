@@ -1,22 +1,45 @@
 body {
-  background-color: green;
 }
-.custom-post-slider {
+#custom-post-carousel .custom-post-slider {
   position: relative;
 }
-.slider-item {
-  margin: 5px;
+#custom-post-carousel .slick-center {
+  /* -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  transform: scale(1.2); */
 }
-.slider-item img {
-  width: 200px;
-  height: 200px;
+#custom-post-carousel .slider-item {
+  min-height: 250px;
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+#custom-post-carousel .slider-item img {
+  width: 90%;
+  height: 90%;
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
   margin-bottom: auto;
   cursor: pointer;
+  object-fit: cover;
+  position: absolute;
 }
-.slider-arrows {
+#custom-post-carousel .slick-current img {
+  width: 100%;
+  height: 100%;
+}
+#custom-post-carousel .slick-current {
+  margin: 0 17px;
+}
+#custom-post-carousel .sliders {
+  /* -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  -webkit-mask-size: 90% 100%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: left, right; */
+}
+#custom-post-carousel .slider-arrows {
   position: absolute;
   display: flex;
   justify-content: space-between;
@@ -24,19 +47,15 @@ body {
   height: 100%;
   align-items: center;
 }
-.slider-arrows img {
+#custom-post-carousel .slider-arrows img {
   z-index: 1;
   cursor: pointer;
 }
-.slick-current img {
-  width: 250px;
-  height: 250px;
-}
-.slick-track {
+#custom-post-carousel .slick-track {
   display: flex !important;
   align-items: center !important;
 }
-.post-excerpt {
+#custom-post-carousel .post-excerpt {
   font-size: 19px;
   font-family: "AcherusGrotesque";
   color: rgb(255, 255, 255);
@@ -45,12 +64,12 @@ body {
   z-index: 3;
   margin: 30px 0;
 }
-.post-header {
+#custom-post-carousel .post-header {
   padding: 20px 30px;
   display: flex;
   flex-direction: column;
 }
-.post-field-date {
+#custom-post-carousel .post-field-date {
   width: 100%;
   max-width: 800px;
   display: flex;
@@ -64,7 +83,7 @@ body {
   margin-top: 10px;
   margin-bottom: 20px;
 }
-.post-title {
+#custom-post-carousel .post-title {
   font-size: 40px;
   font-family: "Baskerville";
   color: rgb(255, 255, 255);

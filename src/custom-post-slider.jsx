@@ -5,9 +5,30 @@ import Slider from "react-slick";
 import arrow_left_png from "./arrow-left.png";
 import arrow_right_png from "./arrow-right.png";
 
+const responsive = [
+  {
+    breakpoint: 1024,
+    settings: {
+      slidesToShow: 3,
+    },
+  },
+  {
+    breakpoint: 600,
+    settings: {
+      slidesToShow: 2,
+    },
+  },
+  {
+    breakpoint: 480,
+    settings: {
+      slidesToShow: 1,
+    },
+  },
+];
+
 const CustomPostSlider = ({ slides }) => {
   const slider = useRef();
-  const [curItem, setCurItem] = useState(slides[slides.length / 2]);
+  const [curItem, setCurItem] = useState(slides[0]);
 
   const goToPost = (item) => {
     window.location.href = item.link;
@@ -37,10 +58,21 @@ const CustomPostSlider = ({ slides }) => {
       <div className="custom-post-slider">
         <div className="slider-arrows">
           <img className="slider-click" src={arrow_left_png} alt="arrow-left" onClick={clickPrev} />
-          <img src={arrow_right_png} className="slider-click" alt="arrow-right" onClick={clickNext} />
+          <img className="slider-click" src={arrow_right_png} alt="arrow-right" onClick={clickNext} />
         </div>
         <div className="sliders">
-          <Slider speed={500} slidesToShow={5} slidesToScroll={1} centerMode={true} arrows={false} ref={(r) => (slider.current = r)} afterChange={afterChange.bind(this)}>
+          <Slider
+            speed={500}
+            slidesToShow={3}
+            slidesToScroll={1}
+            centerMode={true}
+            arrows={false}
+            ref={(r) => (slider.current = r)}
+            afterChange={afterChange.bind(this)}
+            responsive={responsive}
+            adaptiveHeight={true}
+            centerPadding="120px"
+          >
             {slides &&
               slides.map((item) => (
                 <div className="slider-item" key={item.id}>
