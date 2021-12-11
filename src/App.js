@@ -1,13 +1,12 @@
 import React from "react";
-import "./App.css";
-import CustomPostCarousel from "./custom-post-carousel";
+import CustomPostSlider from "./custom-post-slider";
 
 function App() {
   const slides = window.carousel_posts;
 
   return (
     <div className="custom-post-carousel-app">
-      <CustomPostCarousel slides={slides} />
+      <CustomPostSlider slides={slides} />
     </div>
   );
 }

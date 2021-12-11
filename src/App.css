@@ -77,15 +77,23 @@
   z-index: 1;
 }
 #custom-post-carousel .react-3d-carousel .slider-container .slider-content .slider-single.preactive .slider-single-content {
-  opacity: 0.3;
-  transform: translateX(-25%) scale(0.8);
+  opacity: 0.8;
+  transform: translateX(-50%) scale(0.8);
+}
+#custom-post-carousel .react-3d-carousel .slider-container .slider-content .slider-single.preactive.double-pre .slider-single-content {
+  opacity: 0.6;
+  transform: translateX(-100%) scale(0.8);
 }
 #custom-post-carousel .react-3d-carousel .slider-container .slider-content .slider-single.proactive {
   z-index: 1;
 }
 #custom-post-carousel .react-3d-carousel .slider-container .slider-content .slider-single.proactive .slider-single-content {
-  opacity: 0.3;
-  transform: translateX(25%) scale(0.8);
+  opacity: 0.8;
+  transform: translateX(80%) scale(0.8);
+}
+#custom-post-carousel .react-3d-carousel .slider-container .slider-content .slider-single.proactive.double-pro .slider-single-content {
+  opacity: 0.7;
+  transform: translateX(160%) scale(0.8);
 }
 #custom-post-carousel .react-3d-carousel .slider-container .slider-content .slider-single.proactivede .slider-single-content {
   transform: translateX(50%) scale(0);
@@ -226,4 +234,17 @@
 }
 #custom-post-carousel .active .slider-single-content img {
   cursor: pointer;
+}
+
+#custom-post-carousel .react-3d-carousel .slider-container .slider-content .slider-single .slider-single-content {
+  width: 380px;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#custom-post-carousel .react-3d-carousel .slider-container .slider-content .slider-single .active.slider-single-content {
+  width: 450px;
+  height: 420px;
+  margin-left: auto;
+  margin-right: auto;
 }
