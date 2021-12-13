@@ -6,28 +6,16 @@ import arrow_left_png from "./arrow-left.png";
 import arrow_right_png from "./arrow-right.png";
 
 const responsive = [
-  {
-    breakpoint: 1024,
-    settings: {
-      slidesToShow: 3,
-    },
-  },
-  {
-    breakpoint: 600,
-    settings: {
-      slidesToShow: 1,
-    },
-  },
-  {
-    breakpoint: 480,
-    settings: {
-      slidesToShow: 1,
-    },
-  },
+  { breakpoint: 1210, settings: { slidesToShow: 3, centerPadding: "180px" } },
+  { breakpoint: 1024, settings: { slidesToShow: 3, centerPadding: "140px" } },
+  { breakpoint: 780, settings: { slidesToShow: 3, centerPadding: "100px" } },
+  { breakpoint: 650, settings: { slidesToShow: 3, centerPadding: "70px" } },
+  { breakpoint: 480, settings: { slidesToShow: 1, centerPadding: "70px" } },
 ];
 
 const CustomPostSlider = ({ slides }) => {
   const slider = useRef();
+  const currentX = useRef();
   const [curItem, setCurItem] = useState(slides[0]);
 
   const goToPost = (item) => {
@@ -41,6 +29,13 @@ const CustomPostSlider = ({ slides }) => {
   };
   const afterChange = (id) => {
     setCurItem(slides[id]);
+  };
+  const mouseDown = (event) => {
+    currentX.current = event.clientX;
+  };
+  const mouseUp = (item, event) => {
+    if (currentX.current !== event.clientX) return;
+    goToPost(item);
   };
 
   return (
@@ -76,7 +71,7 @@ const CustomPostSlider = ({ slides }) => {
             {slides &&
               slides.map((item) => (
                 <div className="slider-item" key={item.id}>
-                  <img src={item.image_url} alt="slider-element" onClick={goToPost.bind(this, item)} />
+                  <img src={item.image_url} alt="slider-element" onMouseDown={mouseDown.bind(this)} onMouseUp={mouseUp.bind(this, item)} />
                 </div>
               ))}
           </Slider>
