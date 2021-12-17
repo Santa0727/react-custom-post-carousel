@@ -10,5 +10,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("custom-post-carousel")
 );
-
-reportWebVitals();
